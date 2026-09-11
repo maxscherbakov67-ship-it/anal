@@ -1,1 +1,8 @@
 .env
+database.db
+log.log
+__pycache__/
+.DS_Store
+temp.files/
+*.pyc
+errors.log

@@ -29,7 +29,7 @@ def make_handle(tg_id: int) -> str:
     return f"tg{tg_id}"[:32]
 
 def _handle_to_bytes32(handle:str) -> bytes:
-    return Web3.to_bytes(text=handle).ljust32(32, b"\x00")
+    return Web3.to_bytes(text=handle).ljust(32, b"\x00")
 
 def _encode_register_calldata(handle:str, wallet_address: str) -> str:
     w3 = Web3()

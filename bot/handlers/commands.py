@@ -50,7 +50,7 @@ async def cmd_help(message):
 async def cmd_auth(message):
 #    await message.answer(authmsg)
     wallet = await get_or_create_wallet(message.from_user.id)
-    if wallet["is new"]:
+    if wallet["is_new"]:
         text = (
             "Добро пожаловать!\n"
             "Для тебя был создан криптокошелёк:\n"

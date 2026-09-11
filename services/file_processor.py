@@ -4,18 +4,23 @@ from utils.exceptions import filesizeError
 import logging
 MAX_FILESIZE = 20
 EXTENSION_LIST = [".mp3", ".wav", ".flac", ".aac"]
+FORMAT_LIST = ["mp3", "flac", "wav"]
 
 logging.basicConfig(level=logging.INFO, filename="errors.log", filemode="a",
                     format="%(name)s%(asctime)s %(levelname)s %(message)s")
-size_bytes = os.path.getsize(audio_path)
-size_mb = size_bytes / (1024 * 1024)
-extension = os.path.splitext(audio_path)[1].lower()
+def get_size_mb():
+    size_bytes = os.path.getsize(audio_path)
+    size_mb = size_bytes / (1024 * 1024)
+    return size_mb
+def get_extension():
+    extension = os.path.splitext(audio_path)[1].lower()
+    return extension
 def approve_size():
-    if size_mb <= MAX_FILESIZE:
+    if get_size_mb() <= MAX_FILESIZE:
         return True
     else: return False
 def approve_format():
-    if extension in EXTENSION_LIST:
+    if get_extension() in EXTENSION_LIST:
         return True
     else: return False
 def approve_format_bytes(audio_path):
@@ -36,7 +41,7 @@ def approve_format_bytes(audio_path):
     else:
         format = None
         return format
-def validate_audio_file(audio_path):
+def validate_audio_file(audio_path: str) -> dict:
     result = {}
     if approve_size() == True:
         result["ok"] = True
@@ -50,7 +55,7 @@ def validate_audio_file(audio_path):
     else:
         result["ok"] = False
         result["error"] = "wrong_format"
-    if approve_format_bytes(audio_path) == True:
+    if approve_format_bytes(audio_path) in FORMAT_LIST:
         result["ok"] = True
         result["error"] = None
     else:
