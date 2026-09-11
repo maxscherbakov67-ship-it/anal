@@ -4,7 +4,7 @@ from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 def main_menu_keyboard() -> ReplyKeyboardMarkup:
     keyboard = [
-        [KeyboardButton(text="Загрузить трек"), KeyboardButton(text="Авторизация")]
+        [KeyboardButton(text="Загрузить трек"), KeyboardButton(text="Авторизация")],
         [KeyboardButton(text="Помощь"), KeyboardButton(text="История загрузок")]
     ]
     return ReplyKeyboardMarkup(keyboard=keyboard, resize_keyboard=True)
@@ -24,7 +24,7 @@ def main_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Регги / Саундтреки / Другое", callback_data="genre_reggae"),
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def electro_genre_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -52,7 +52,7 @@ def electro_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def hiphop_genre_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -67,7 +67,7 @@ def hiphop_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def rock_genre_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -84,7 +84,7 @@ def rock_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def pop_genre_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -99,7 +99,7 @@ def pop_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def jazz_genre_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -116,7 +116,7 @@ def jazz_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def reggae_genre_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -136,7 +136,7 @@ def reggae_genre_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def privacy_keyboard() -> InlineKeyboardMarkup:
     keyboard=[
@@ -148,7 +148,7 @@ def privacy_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад в меню", callback_data="genre_backtomenu")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
 
 def goback_keyboard() -> InlineKeyboardMarkup:
     keyboard = [
@@ -156,4 +156,4 @@ def goback_keyboard() -> InlineKeyboardMarkup:
             InlineKeyboardButton(text="Назад", callback_data="goback")
         ],
     ]
-    return InlineKeyboardMarkup(keyboard=keyboard)
+    return InlineKeyboardMarkup(inline_keyboard=keyboard)
