@@ -22,3 +22,4 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, filename="log.log", filemode="a",
                         format="%(name)s%(asctime)s %(levelname)s %(message)s")
     asyncio.run(main())
+#penis

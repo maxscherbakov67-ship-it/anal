@@ -7,10 +7,10 @@ async def init_db():
     async with aiosqlite.connect(DATABASE_PATH) as db:
         await db.execute("""
             CREATE TABLE IF NOT EXISTS users (
-                tg_id INTEGER PRIMARY KEY
-                wallet_address TEXT NOT NULL
-                private_key TEXT NOT NULL
-                created_at TEXT NOT NULL
+                tg_id INTEGER PRIMARY KEY,
+                wallet_address TEXT NOT NULL,
+                private_key TEXT NOT NULL,
+                created_at TEXT NOT NULL,
             )
         """)
         await db.commit()
